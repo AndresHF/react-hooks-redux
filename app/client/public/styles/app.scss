@@ -1,0 +1,33 @@
+@import "layout/header.scss";
+@import "layout/section.scss";
+
+//@import "antd/dist/antd.css";
+/**
+font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Work Sans', sans-serif;
+font-family: 'Oxygen', sans-serif;
+*/
+
+$bodyBg: #f0f0f0;
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Lobster", cursive;
+  background-color: $bodyBg;
+}
+
+.font1 {
+  font-family: "Anton", sans-serif;
+}
+.font2 {
+  font-family: "Lobster", cursive;
+}
+.font3 {
+  font-family: "Work Sans", sans-serif;
+}
+.font4 {
+  font-family: "Oxygen", sans-serif;
+}

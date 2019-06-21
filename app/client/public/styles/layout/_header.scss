@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Lobster|Oxygen|Work+Sans&display=swap");
+/**
+font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Work Sans', sans-serif;
+font-family: 'Oxygen', sans-serif;
+*/
+
+$headerHeight: 60px;
+
+.header {
+  position: fixed;
+  text-align: center;
+  background-color: black;
+  font-size: 40px;
+  width: 100vw;
+  height: $headerHeight;
+  font-family: "Work Sans", sans-serif;
+  overflow: hidden;
+}
+
+.afterHeader {
+  padding-top: $headerHeight;
+}
+
+@keyframes logo-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-20deg);
+  }
+}
+@keyframes logo-animation-reverse {
+  from {
+    transform: rotate(-20deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wave-animation {
+  from {
+    background-position: 0 bottom;
+  }
+  to {
+    background-position: 125px bottom;
+  }
+}
+@keyframes loading-animation {
+  from {
+    background-size: 125px 50px;
+  }
+  to {
+    background-size: 125px 18px;
+  }
+}
+
+@keyframes loading-animation-reverse {
+  from {
+    background-size: 125px 18px;
+  }
+  to {
+    background-size: 125px 50px;
+  }
+}
+
+.logo {
+  width: 125px;
+  height: 35px;
+  background-image: url("http://localhost:3000/images/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.wave {
+  background-image: url("http://localhost:3000/images/redwave.png");
+  width: 122px;
+  height: 33px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background-size: 125px 50px;
+  background-repeat: repeat-x;
+  background-position: 0 bottom;
+  background-color: black;
+  opacity: 1;
+  z-index: -1;
+  animation: loading-animation-reverse 1s linear forwards,
+    wave-animation 1s infinite linear;
+}
+.containerLogo {
+  animation: logo-animation-reverse 1s ease forwards;
+  width: 123px;
+  height: 35px;
+}
+.containerLogo:hover {
+  animation: logo-animation 1s ease forwards;
+}
+.logo:hover {
+  + .wave {
+    animation: wave-animation 1s infinite linear,
+      loading-animation 2s linear forwards;
+  }
+}
